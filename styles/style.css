@@ -162,6 +162,10 @@
   margin-top: 40px;
 }
 
+.section__desc {
+  margin-block-start: -40px;
+}
+
 .question {
   margin-block-start: 0;
 }
@@ -340,6 +344,10 @@
   grid-row: 1;
 }
 
+.section__desc {
+  margin-block-start: 0;
+}
+
 .advice {
   max-inline-size: 473px;
   max-block-size: 22px;
@@ -353,7 +361,8 @@
 .section__group-list {
   grid-column: 2;
   grid-row: 1;
-  padding-block-start: 41px;
+  padding-block-start: 43px;
+  padding-inline-end: 17px;
 }
 
 .section__tablet {
@@ -371,21 +380,17 @@
   margin-block-start: 60px;
 }
 
-.section__group-list {
-  padding-inline-end: 17px;
-}
-
 .section__group-list-title {
-  margin-inline-end: 0;
+  margin-inline-end: 3px;
   margin-inline-start: 19px;
 }
 
 .section__group-list-image {
   padding-left: 20px;
-  grid-template-columns: 235px 233px 235px;
-  grid-template-rows: 196px 223px 313px;
-  row-gap: 27px;
-  column-gap: 13px;
+  grid-template-columns: 233px 233px 235px;
+  grid-template-rows: 191px 226px 318px;
+  row-gap: 22px;
+  column-gap: 15px;
 
   grid-template-areas:
     "sunset sunset icecream"
@@ -425,6 +430,7 @@
   grid-column: 1 / 4;
   margin-block-start: 20px;
   margin-inline-end: 20px;
+  margin-block-end: 11px;
 }
 
 .footer {
@@ -464,7 +470,8 @@
   }
 
   .advice {
-    margin-inline-end: -18px;
+    margin-inline-end: 20px;
+    max-inline-size: none;
   }
 
   .section {
@@ -491,7 +498,7 @@
 
   .section__group-list-image {
   grid-template-columns: 316px 313px 315px;
-  grid-template-rows: 267px 315px 433px;
+  grid-template-rows: 262px 315px 433px;
   gap: 20px;
   grid-template-areas:
     "sunset sunset icecream"
