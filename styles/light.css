@@ -3,83 +3,23 @@
   Здесь окажутся стили, которые нужно переопределить принудительно,
   переключая тему
 */
+.theme-light .page {
+  background-color: var(--bg-color);
+}
 
 :root.theme-light {
-  --primary-light-color: #353430;
-  --h1-title-color: #FFC2E6;
+  --font-family: "IBM Plex Mono", Monospace;
+  --h1-title-color: #ffc2e6;
   --title-text-color: #000028;
-  --main-color-text: #F1B2CE;
-  --backgrnd-color-title: #FF8DCB;
-}
-
-.theme-light .page {
-  background-color: #FFF1F7;
-  background-attachment: fixed;
-}
-
-.theme-light .header {
-  background-image: url("/images/cover-image-light.png");
+  --main-color-text: #353430;
+  --primary-color: #ff8dcb;
+  --decorated-color: #353430;
+  --bg-color: #fff1f7;
+  --page-background-image: url("../images/cover-image-light.png");
+  --button-hover-color: #32312d66;
+  --button-color: #353430;
 }
 
 .theme-light .rec-content {
   display: none;
-}
-
-.theme-light .top-right-decor::before,
-.top-right-decor::after,
-.bottom-left-decor::before,
-.bottom-left-decor::after {
-  background-color: var(--primary-light-color);
-}
-
-.theme-light .header__theme-menu-list {
-  color: var(--primary-light-color);
-}
-
-.theme-light .header__theme-menu-button_active {
-  border: 1px solid var(--primary-light-color);
-}
-
-.theme-light .header__theme-menu-button:hover {
-  border: 1px solid var(--primary-light-color);
-}
-
-.theme-light .header__theme-menu-button:focus {
-  border-bottom: 1px solid var(--primary-light-color);
-}
-
-.theme-light .header__title {
-  color: var(--h1-title-color);
-  text-shadow: 4px 4px 0 var(--backgrnd-color-title);
-}
-
-.theme-light .header__description {
-  color: var(--primary-light-color);
-  background-color: var(--backgrnd-color-title);
-}
-
-.theme-light .section__title {
-  color:var(--primary-light-color);
-}
-
-.theme-light .section__group-title {
-  color: var(--primary-light-color);
-  background-color: var(--backgrnd-color-title);
-}
-
-.theme-light .section__group-description {
-  color: var(--primary-light-color);
-}
-
-.theme-light .link {
-  text-shadow: 2px 1.3px 0px var(--backgrnd-color-title);
-}
-
-.theme-light .link:focus {
-  border: 1px solid var(--primary-light-color);
-}
-
-.theme-light .section__group-list-title {
-  color: var(--primary-light-color);
-  background-color: var(--backgrnd-color-title);
 }
