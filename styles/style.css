@@ -7,6 +7,7 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   min-height: 100vh;
+  background-image: var(--page-background-image);
   background-color: var(--bg-color);
 }
 
@@ -18,7 +19,6 @@
   align-items: center;
   position: relative;
   padding: 10px;
-  background-image: var(--page-background-image);
 }
 
 .rec-content {
@@ -44,19 +44,15 @@
   content: "";
 }
 
-.decorated-zone::before,
-.decorated-zone::after {
-  position: absolute;
-  content: "";
-  width: 25px;
-  height: 25px;
-}
-
 .decorated-zone::before {
   top: 10px;
   right: 10px;
   border-top: 1px solid var(--decorated-color);
   border-right: 1px solid var(--decorated-color);
+  position: absolute;
+  content: "";
+  width: 25px;
+  height: 25px;
 }
 
 .decorated-zone::after {
@@ -64,6 +60,10 @@
   left: 10px;
   border-bottom: 1px solid var(--decorated-color);
   border-left: 1px solid var(--decorated-color);
+  position: absolute;
+  content: "";
+  width: 25px;
+  height: 25px;
 }
 
 .header__theme-menu {
@@ -89,7 +89,7 @@
 }
 
 .header__title {
-  color: var(--h1-title-color);
+  color: var(--main-title-color);
   font-family: var(--font-family);
   line-height: 83%;
   font-size: 116px;
@@ -124,7 +124,8 @@
 
 .main {
   width: 100%;
-  margin-block-start: 40px;
+  padding-block-start: 40px;
+  background-color: inherit;
 }
 
 .section {
@@ -133,7 +134,7 @@
 }
 
 .card {
-  padding-block-start: 30px;
+  padding-block-start: 20px;
 }
 
 .section__title-secondary {
@@ -149,7 +150,7 @@
   font-weight: 700;
   font-size: 18px;
   line-height: 23.4px;
-  color: var(--primary-color);
+  color: var(--decorated-color);
 }
 
 .card__title {
@@ -159,7 +160,6 @@
   line-height: 23.4px;
   background-color: var(--primary-color);
   color: var(--title-text-color);
-  margin-block-start: -10px;
 }
 
 .card__text {
@@ -182,7 +182,8 @@
 }
 
 .section__image {
-  margin-block-start: 58px;
+  margin-block-start: 48px;
+  padding-block-end: 40px;
 }
 
 .section__group-list-image {
@@ -192,7 +193,7 @@
 }
 
 .section__group-title {
-  font-family: IBM Plex Mono, sans-serif;
+  font-family: var(--font-family);
   font-weight: 700;
   font-size: 18px;
   line-height: 23.4px;
@@ -203,7 +204,7 @@
 }
 
 .section__group-description {
-  font-family: IBM Plex Mono, sans-serif;
+  font-family: var(--font-family);
   font-weight: 400;
   font-size: 18px;
   line-height: 23.4px;
@@ -237,7 +238,10 @@
   max-height: 668px;
   padding: 10px;
   position: relative;
-  margin-block-start: 37px;
+  background-color: inherit;
+  display: flex;
+  margin: auto;
+  align-items: center;
 }
 
 .footer__title {
@@ -245,33 +249,20 @@
   font-weight: 700;
   font-size: 116px;
   line-height: 83%;
-  color: var(--h1-title-color);
+  color: var(--main-title-color);
   text-shadow: 4px 4px 0px var(--primary-color),
     4px 4px 0px rgba(255, 0, 112, 0.5);
-  padding: 278px 5px;
 }
 
 @media (min-width: 768px) {
   .header {
     padding: 20px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
   }
 
   .rec-content {
     top: 20px;
     right: 29px;
     gap: 11px;
-  }
-
-  .rec-content::after {
-    width: 9px;
-    height: 9px;
-    background-color: var(--primary-color);
-    border-radius: 50%;
-    box-shadow: 0px 0px 4px 2px var(--primary-color);
-    content: "";
   }
 
   .decorated-zone::before {
@@ -310,19 +301,17 @@
   }
 
   .card {
-    padding-inline-start: 30px;
+    padding-inline-start: 9px;
     padding-inline-end: 10px;
     grid-column: 2/2;
   }
 
-  .section__second {
-    grid-template-rows: repeat(5, auto);
-    gap: 20px;
+  .section__card-content {
+    padding-inline-start: 20px;
   }
 
   .section__container {
     grid-column: 1/5;
-    margin-inline-start: -20px;
   }
 
   .section__title-secondary {
@@ -335,13 +324,16 @@
     margin-inline-end: 10px;
   }
 
-  .title__image {
-    grid-row: 1;
+  .title-image {
+    margin-block-start: 30px;
+    margin-inline-start: 10px;
+    margin-inline-end: 10px;
   }
 
   .section__image {
     grid-template-rows: 1fr auto;
     grid-template-columns: none;
+    padding-block-end: 56px;
   }
 
   .section__group-list-image {
@@ -358,10 +350,8 @@
       "tape street street";
   }
 
-  .section__group-list-image img {
-    width: 100%;
+  .picture {
     height: 100%;
-    object-fit: cover;
   }
 
   .sunset {
@@ -386,21 +376,14 @@
     grid-column: 4 / 2;
   }
 
-  .title-image {
-    margin-block-start: 20px;
-    margin-inline-start: 10px;
-    margin-inline-end: 10px;
-  }
-
   .footer {
     padding: 20px;
-    margin-block-start: 56px;
-    max-block-size: 1024px;
+    min-block-size: 1024px;
   }
 
   .footer__title {
     font-size: 120px;
-    padding: 446px 182px;
+    padding-inline-start: 183px;
   }
 }
 
@@ -437,14 +420,14 @@
 
   .section__container {
     display: grid;
-    grid-template-columns: repeat(3, 315px);
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3px;
   }
 
   .card--special {
     grid-column: span 1;
-    padding-block-start: 31px;
-    margin-inline-end: -40px;
+    padding-block-start: 20px;
+    padding-inline-end: 10px;
   }
 
   .section__image {
@@ -497,8 +480,8 @@
   :root {
     /* Цвета для светлой темы */
     --font-family: "IBM Plex Mono", Monospace;
-    --h1-title-color: #ffc2e6;
-    --title-text-color: #000028;
+    --main-title-color: #ffc2e6;
+    --title-text-color: #353430;
     --main-color-text: #353430;
     --primary-color: #ff8dcb;
     --decorated-color: #353430;

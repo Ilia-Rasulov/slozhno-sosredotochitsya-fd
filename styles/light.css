@@ -3,14 +3,10 @@
   Здесь окажутся стили, которые нужно переопределить принудительно,
   переключая тему
 */
-.theme-light .page {
-  background-color: var(--bg-color);
-}
 
 :root.theme-light {
-  --font-family: "IBM Plex Mono", Monospace;
-  --h1-title-color: #ffc2e6;
-  --title-text-color: #000028;
+  --main-title-color: #ffc2e6;
+  --title-text-color: #353430;
   --main-color-text: #353430;
   --primary-color: #ff8dcb;
   --decorated-color: #353430;
@@ -22,4 +18,23 @@
 
 .theme-light .rec-content {
   display: none;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    /* Цвета для светлой темы */
+    --main-title-color: #ffc2e6;
+    --title-text-color: #353430;
+    --main-color-text: #353430;
+    --primary-color: #ff8dcb;
+    --decorated-color: #353430;
+    --bg-color: #fff1f7;
+    --page-background-image: url("../images/cover-image-light.png");
+    --button-hover-color: #32312d66;
+    --button-color: #353430;
+  }
+
+  .rec-content {
+    display: none;
+  }
 }
